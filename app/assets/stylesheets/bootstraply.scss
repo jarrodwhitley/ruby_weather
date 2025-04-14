@@ -1,6 +1,11 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+// create a ruby colored gradient from light to dark using only ruby colors
+$ruby: #e90000;
+$ruby-dark: #b80000;
+$gradient-ruby: linear-gradient(to right, $ruby, $ruby-dark);
+
 .green {
     background-color: #6b8e23; // Olive Green
 }
@@ -18,4 +23,29 @@
 }
 .maroon {
     background-color: #8b5a5a; // Rosy Brown
+}
+
+.navbar {
+    background: $gradient-ruby;
+    color: #fff;
+
+    input#zipcode {
+        background: #fff;
+        color: #000;
+        border-color: #fafafa;
+    }
+    input#zipcode:focus {
+        background: #fff;
+        color: #000;
+    }
+    .btn {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+
+        &:hover {
+            background: white;
+            color: $ruby-dark;
+        }
+    }
 }

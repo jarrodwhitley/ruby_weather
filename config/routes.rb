@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  post "/zipcode" => "zipcode#search", as: "zipcode"
-
-  get "home/zipcode"
-  get "up" => "rails/health#show", as: :rails_health_check
-
+  post "/zipcode" => "home#zipCode", as: "zipcode"
+  # get "/home/zipcode" => "home#zipcode", as: "home_zipcode"
   root "home#index"
 end
