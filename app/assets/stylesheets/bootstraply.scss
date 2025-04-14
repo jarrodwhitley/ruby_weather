@@ -1,0 +1,21 @@
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+.green {
+    background-color: #6b8e23; // Olive Green
+}
+.yellow {
+    background-color: #c2b280; // Khaki
+}
+.orange {
+    background-color: #d2a679; // Light Brownish Orange
+}
+.red {
+    background-color: #a0522d; // Sienna
+}
+.purple {
+    background-color: #9370db; // Medium Purple
+}
+.maroon {
+    background-color: #8b5a5a; // Rosy Brown
+}
