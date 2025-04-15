@@ -1,7 +1,7 @@
 <div class="home container-fluid py-5">
-  <h1 class="display-5 fw-bold">Air Quality Checker</h1>
+  <h1 class="display-5 fw-bold">Enter your zipcode</h1>
   <%= form_tag zipcode_path, method: 'post', class: "mt-4", data: { turbo: false } do %>
-    <%= text_field_tag 'zipcode', "", placeholder: "Enter Your Zipcode", class: "form-control me-2" %>
+    <%= text_field_tag 'zipcode', "", placeholder: "Zipcode", class: "form-control me-2" %>
     <%= submit_tag 'Search', class: 'btn btn-primary btn-lg mt-4' %>
   <% end %>
 </div>
