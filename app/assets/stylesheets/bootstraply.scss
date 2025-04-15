@@ -6,6 +6,13 @@ $ruby: #e90000;
 $ruby-dark: #b80000;
 $gradient-ruby: linear-gradient(to right, $ruby, $ruby-dark);
 
+.aqi {
+    color: white;
+    border-radius: 100%;
+    padding: 0.5rem;
+    width: fit-content;
+}
+
 .green {
     background-color: #6b8e23; // Olive Green
 }

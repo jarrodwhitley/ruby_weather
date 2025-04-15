@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Ruby Weather" %></title>
+    <title><%= "Air Quality Checker" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -18,9 +18,14 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <%= render 'home/navbar' %>
+    <%= render 'components/navbar' %>
     <div class="container pt-4">
       <%= yield %>
+      <% flash.each do |key, message| %>
+        <div class="alert alert-<%= key == 'alert' ? 'danger' : 'success' %>">
+          <%= message %>
+        </div>
+      <% end %>
     </div>
   </body>
 </html>
