@@ -8,7 +8,7 @@ class ZipcodeController < ApplicationController
       require "net/http"
       require "json"
 
-      @url = "https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=#{@zip_query}&distance=25&API_KEY=17327A63-EDE4-40C1-981F-B9C56BE8C55B"
+      @url = "https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=#{@zip_query}&distance=50&API_KEY=17327A63-EDE4-40C1-981F-B9C56BE8C55B"
       @uri = URI(@url)
       @response = Net::HTTP.get(@uri)
 
@@ -25,6 +25,8 @@ class ZipcodeController < ApplicationController
         @aqi_value = @final_output["AQI"]
         @aqi_color = setAqiColor(@aqi_value)
         @aqi_description = @final_output["Category"]["Name"]
+        @city = @final_output["ReportingArea"]
+        @state = @final_output["StateCode"]
       end
     end
   end
