@@ -12,9 +12,6 @@ class ZipcodeController < ApplicationController
       @uri = URI(@url)
       @response = Net::HTTP.get(@uri)
 
-      # debug @response
-      puts "RESPONSE: #{@response}"
-
       @output = JSON.parse(@response)
 
       if @output.empty? || !@output
