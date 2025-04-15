@@ -1,24 +1,6 @@
-# README
+# Air Quality Checker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple air quality checker app for me to learn Ruby on Rails 8.
 
-Things you may want to cover:
+See it here! https://mighty-spire-76539-498428e539b8.herokuapp.com/zipcode
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
