@@ -1,9 +1,9 @@
-class ZipcodeController < ApplicationController
-  def index
+class AqiController < ApplicationController
+  def search
     @zip_query = params[:zipcode]
     if @zip_query.blank?
       flash[:alert] = "You must enter a zipcode"
-      redirect_to root_path
+      redirect_to aqi_search_path
     else
       require "net/http"
       require "json"
@@ -24,8 +24,12 @@ class ZipcodeController < ApplicationController
         @aqi_description = @final_output["Category"]["Name"]
         @city = @final_output["ReportingArea"]
         @state = @final_output["StateCode"]
+        render :results
       end
     end
+  end
+
+  def show
   end
 
   private
