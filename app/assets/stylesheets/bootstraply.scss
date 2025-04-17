@@ -20,11 +20,17 @@ a {
 
 .alert {
     position: absolute;
-    top: 20px;
+    bottom: 20px;
     left: 50%;
     opacity: 0;
-    transform: translate(-50%, -10vh);
+    transform: translate(-50%, 10vh);
     transition: all .5s ease-in-out;
+
+    @media (min-width: 767px) {
+        bottom: auto;
+        top: 20px;
+        transform: translate(-50%, -10vh);
+    }
 
     &.show {
         opacity: 1;
