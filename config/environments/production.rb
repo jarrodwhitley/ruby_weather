@@ -86,7 +86,8 @@ Rails.application.configure do
   config.active_record.attributes_for_inspect = [ :id ]
 
   # Enable DNS rebinding protection and other `Host` header attacks.
-  config.hosts.clear
+  # config.hosts.clear
+  config.hosts << "mighty-spire-76539-498428e539b8.herokuapp.com"
   # config.hosts = [
   #   "example.com",     # Allow requests from example.com
   #   /.*\.example\.com/ # Allow requests from subdomains like `www.example.com`
