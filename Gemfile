@@ -22,7 +22,7 @@ gem "sassc-rails"
 gem "json", "~> 2.10", ">= 2.10.2"
 gem "pg"
 gem "dotenv-rails", groups: [ :development, :test ]
-
+gem "rack-cors"
 gem "htmlbeautifier"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
