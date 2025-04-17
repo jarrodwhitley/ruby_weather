@@ -3,7 +3,9 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   # config.asset_host = "https://www.herokucdn.com"
-  Rails.logger.info "ActiveRecord configs: #{ActiveRecord::Base.configurations.inspect}"
+  config.after_initialize do
+    Rails.logger.info "ActiveRecord configs: #{ActiveRecord::Base.configurations.inspect}"
+  end
 
   # Code is not reloaded between requests.
   config.enable_reloading = false
