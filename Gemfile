@@ -21,7 +21,9 @@ gem "jquery-rails"
 gem "sassc-rails"
 gem "json", "~> 2.10", ">= 2.10.2"
 gem "pg"
-gem "dotenv-rails", groups: [ :development, :test ]
+group :development, :test do
+  gem "dotenv-rails"
+end
 gem "rack-cors"
 gem "htmlbeautifier"
 
