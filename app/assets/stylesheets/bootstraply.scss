@@ -1,10 +1,21 @@
-// Custom bootstrap variables must be set or imported *before* bootstrap.
+// NOTICE: 
+// Please do not judge my CSS skills too harshly by this file. 
+// I rushed through the CSS in an effort to learn Ruby on Rails as fast as possible.
+// Typically I use Bootstrap/Tailwind or BEM conventions for CSS.
+
 @import "bootstrap";
 
-// create a ruby colored gradient from light to dark using only ruby colors
 $ruby: #e90000;
 $ruby-dark: #b80000;
 $gradient-ruby: linear-gradient(to right, $ruby, $ruby-dark);
+
+a {
+    text-decoration: none;
+    color: $ruby;
+    &:hover {
+        color: $ruby-dark;
+    }
+}
 
 .aqi {
     color: white;
@@ -64,4 +75,24 @@ input#zipcode{
 .twitter_home {
     width: 800px;
     max-width: 90%
+}
+
+.project-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    color: $ruby;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 2px solid $ruby;
+    padding: 1rem;
+    margin: 1rem;
+    text-decoration: none;
+    
+    &:hover {
+        background: $gradient-ruby;
+        color: white;
+        text-decoration: none;
+    }
 }

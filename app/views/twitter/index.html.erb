@@ -11,52 +11,14 @@
   </div>
   <% if current_user %>
     <p>Welcome, <%= current_user.username %>!</p>
-  <% else %>
-    <!-- Trigger the modal -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const tweetForm = document.getElementById("tweetForm");
-        const loginModal = new bootstrap.Modal(document.getElementById("loginModal"));
-        const modalTitle = document.getElementById("loginModalTitle");
-        const loginForm = document.getElementById("loginForm");
-        const registerForm = document.getElementById("registerForm");
-        const showRegisterForm = document.getElementById("showRegisterForm");
-        const showLoginForm = document.getElementById("showLoginForm");
-
-        if (showRegisterForm) {
-            showRegisterForm.addEventListener("click", function (event) {
-                event.preventDefault();
-                loginForm.style.display = "none";
-                registerForm.style.display = "block";
-                modalTitle.innerText = "Register";
-            });
-        }
-        if (showLoginForm) {
-            showLoginForm.addEventListener("click", function (event) {
-                event.preventDefault();
-                registerForm.style.display = "none";
-                loginForm.style.display = "block";
-                modalTitle.innerText = "Login";
-            });
-        }
-
-        tweetForm.addEventListener("submit", function (event) {
-        <% if current_user.nil? %>
-            event.preventDefault();
-            loginModal.show();
-        <% end %>
-        });
-      });
-    </script>
   <% end %>
-  <!-- Tweets Section -->
   <div class="compose">
     <div class="mb-2">Compose a Tweet</div>
     <%= form_with model: @tweet, local: true, url: twitter_create_path, id: "tweetForm" do |form| %>
       <div class="mb-3">
         <%= form.text_area :content, placeholder: "Say something cool!", class: "form-control", rows: 3 %>
       </div>
-      <%= form.submit "Tweet", class: "btn btn-primary" %>
+      <%= form.submit "Tweet", class: "btn btn-primary", data: { action: "check-auth" } %>
     <% end %>
   </div>
   <div class="tweets mt-4">
@@ -77,5 +39,4 @@
     <% end %>
   </div>
 </div>
-<!-- render Login/Register Modal -->
 <%= render 'components/auth_modal' %>

@@ -18,7 +18,7 @@
     <%= javascript_importmap_tags %>
     <script src="https://cdn.jsdelivr.net/npm/@rails/ujs@7.0.4/lib/assets/compiled/rails-ujs.js"></script>
   </head>
-  <body>
+  <body data-current-user="<%= current_user.present? %>">
     <%= render 'components/navbar' %>
     <div class="container pt-4">
       <%= yield %>
