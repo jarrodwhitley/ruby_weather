@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const isLoggedIn = document.body.dataset.currentUser === "true";
 
             if (!isLoggedIn) {
-                console.log("User is not logged in. Showing login modal.");
                 event.preventDefault(); 
                 loginModal.show();
             }

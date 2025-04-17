@@ -9,6 +9,7 @@ $ruby: #e90000;
 $ruby-dark: #b80000;
 $gradient-ruby: linear-gradient(to right, $ruby, $ruby-dark);
 
+/* Global Styles */
 a {
     text-decoration: none;
     color: $ruby;
@@ -16,6 +17,23 @@ a {
         color: $ruby-dark;
     }
 }
+
+.alert {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -10vh);
+    transition: all .5s ease-in-out;
+
+    &.show {
+        opacity: 1;
+        transform: translate(-50%, 0);
+        transition: all 1s ease-in-out;
+    }
+}
+
+/* Page Styles */
 
 .aqi {
     color: white;
