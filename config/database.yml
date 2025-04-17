@@ -13,4 +13,6 @@ test:
 
 production:
   <<: *default
-  cable: {}
+
+  cable:
+    adapter: async
