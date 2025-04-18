@@ -22,7 +22,7 @@ gem "sassc-rails"
 gem "json", "~> 2.10", ">= 2.10.2"
 gem "pg"
 group :development, :test do
-  gem "dotenv-rails", "~> 2.7" # use 2.7 to avoid the removed `instrumenter=` method
+  gem "dotenv-rails", "~> 3.1" # use 2.7 to avoid the removed `instrumenter=` method
 end
 gem "rack-cors"
 gem "htmlbeautifier"
