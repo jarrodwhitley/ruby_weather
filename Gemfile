@@ -19,7 +19,7 @@ gem "jbuilder"
 gem "bootstrap", "~> 5.3.3"
 gem "jquery-rails"
 gem "sassc-rails"
-gem "json", "~> 2.10", ">= 2.10.2"
+gem "json", "~> 2.11"
 gem "pg"
 group :development, :test do
   gem "dotenv-rails", "~> 2.7" # use 2.7 to avoid the removed `instrumenter=` method
