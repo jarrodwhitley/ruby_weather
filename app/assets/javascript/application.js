@@ -1,7 +1,9 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
-import "./twitter";
-import "./alerts";
+import "./twitter"
+import "./alerts"
+
+// Add this line to load the bundled JavaScript that includes React
+import "../../assets/builds/application"

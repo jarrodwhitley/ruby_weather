@@ -3,15 +3,22 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # Find the user by email or username
-    user = User.find_by("email = :login OR username = :login", login: params[:login])
+    # Find user by email or username
+    user = User.find_by(email: params[:login]) ||
+           User.find_by(username: params[:login])
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to twitter_path, notice: "Logged in successfully!"
+      redirect_to root_path
     else
-      flash.now[:alert] = "Invalid email/username or password."
-      render :new
+      flash.now[:alert] = "Invalid login credentials"
+
+      # Render only the frame instead of the full page
+      render turbo_stream: turbo_stream.replace(
+        "login_form",
+        partial: "sessions/form",
+        locals: { error: "Invalid login credentials" }
+      ), status: :unprocessable_entity
     end
   end
 
