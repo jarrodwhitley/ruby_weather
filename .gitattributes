@@ -1,9 +1,20 @@
-# See https://git-scm.com/docs/gitattributes for more about git attribute files.
-
-# Mark the database schema as having been generated.
+# Existing rules
 db/schema.rb linguist-generated
-
-# Mark any vendored files as having been vendored.
 vendor/* linguist-vendored
 config/credentials/*.yml.enc diff=rails_credentials
 config/credentials.yml.enc diff=rails_credentials
+
+# Force Ruby-related files to be included
+*.rb linguist-detectable
+Gemfile linguist-detectable
+Rakefile linguist-detectable
+
+# Deprioritize front-end/template files
+*.html linguist-vendored
+*.erb linguist-vendored
+*.haml linguist-vendored
+*.slim linguist-vendored
+*.css linguist-vendored
+*.js linguist-vendored
+*.scss linguist-vendored
+*.sass linguist-vendored
