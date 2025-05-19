@@ -1,6 +1,7 @@
-# Air Quality Checker
+# Ruby Projects
 
-This is a simple air quality checker app for me to learn Ruby on Rails 8. This app uses the airnow.gov API. 
+This page showcases my Ruby on Rails projects. Current projects are:
+- Air Quality Checker
+- Twitter Clone
 
-See it here! https://mighty-spire-76539-498428e539b8.herokuapp.com/zipcode
 
