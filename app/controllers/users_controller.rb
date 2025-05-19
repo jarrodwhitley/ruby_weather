@@ -5,12 +5,15 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
     if @user.save
-      session[:user_id] = @user.id # Log the user in after registration
+      # Registration successful
+      session[:user_id] = @user.id
       redirect_to twitter_path, notice: "Account created successfully!"
     else
-      flash.now[:alert] = "There was an error creating your account."
-      render :new
+      # Registration failed - redirect back instead of rendering template
+      flash[:alert] = @user.errors.full_messages.to_sentence
+      redirect_to request.referer || register_path
     end
   end
 

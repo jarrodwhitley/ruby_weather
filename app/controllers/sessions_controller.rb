@@ -3,15 +3,16 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # Find the user by email or username
-    user = User.find_by("email = :login OR username = :login", login: params[:login])
+    user = User.find_by(email: params[:login]) || User.find_by(username: params[:login])
 
-    if user&.authenticate(params[:password])
+    if user && user.authenticate(params[:password])
+      # Authentication successful
       session[:user_id] = user.id
-      redirect_to twitter_path, notice: "Logged in successfully!"
+      redirect_to twitter_path # Always redirect after successful login
     else
-      flash.now[:alert] = "Invalid email/username or password."
-      render :new
+      # Authentication failed - IMPORTANT: still redirect instead of render
+      flash[:alert] = "Invalid email/username or password"
+      redirect_to request.referer || login_path # Redirect back or to login path
     end
   end
 

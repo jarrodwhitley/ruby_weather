@@ -16,7 +16,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
-gem "bootstrap", "~> 5.3.3"
+gem "bootstrap", "~> 5.1.3"
 gem "jquery-rails"
 gem "sassc-rails"
 gem "json", "~> 2.10", ">= 2.10.2"
