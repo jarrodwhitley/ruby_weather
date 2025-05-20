@@ -26,22 +26,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (tweetForm) {
-        tweetForm.addEventListener("submit", function (event) {
+        const submitButton = tweetForm.querySelector('input[type="submit"]');
+        
+        submitButton.addEventListener("click", function(event) {
             const isLoggedIn = document.body.getAttribute("data-current-user") === "true";
-
+            
             if (!isLoggedIn) {
-                event.preventDefault(); 
-                const bsModal = new bootstrap.Modal(loginModal);
-                bsModal.show();
-
+                event.preventDefault();
+                
+                const existingMessages = loginModal.querySelectorAll(".login-message");
+                existingMessages.forEach(msg => msg.remove());
+                
                 const messageElement = document.createElement("div");
                 messageElement.className = "login-message alert-info";
                 messageElement.textContent = "Please log in to post a tweet";
                 loginModal.querySelector(".modal-body").prepend(messageElement);
-
+                
+                const bsModal = new bootstrap.Modal(loginModal);
+                bsModal.show();
+                
                 loginModal.addEventListener("hidden.bs.modal", function () {
                     messageElement.remove();
                 }, { once: true });
+                
+                return false;
             }
         });
     }
